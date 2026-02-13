@@ -1,10 +1,38 @@
 # PublicEditorEnabler
-A BepInEX plugin allow to access bits & bops' hidden custom mixtape editor in steam public branch, for those who don't want to tolerate the problems in the beta version.
-## How To Use This?
-1. Download [BepInEX 5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5) and the latest version of the plugin from releases. Extract BepInEX to the game's root directory, run the game once, exit, open the BepInEX folder, and copy the plugin DLL to the plugins directory.
 
-2. Alternatively, if you have already installed [Riqmenu](https://riqs.kabir.au/), BepInEX should already be installed. Simply open the BepInEX folder and copy the plugin DLL to the plugins directory.
+A BepInEx plugin that unlocks the hidden **Custom Mixtape Editor** in the Steam public branch of *Bits & Bops*. This allows users to access the editor without switching to the potentially unstable beta branch.
 
-3. After installation, open the game, go to the Credits in menu, press Ctrl+E, and enjoy!
+## ⚠️ Disclaimer
 
-This plugin is open source under the MIT license.
+* **Not an Official Product:** This plugin is an unofficial modification and is **not** affiliated with or endorsed by **Tempo Labs**.
+* **Use at Your Own Risk:** Enabling hidden features may lead to game instability or save data corruption.
+* **No Official Support:** **DO NOT contact Tempo Labs** regarding any issues or bugs encountered while using this plugin.
+
+## 🛠️ How To Use
+
+### Prerequisites
+
+* **Option A:** Download and install [BepInEx 5.4.x](https://github.com/BepInEx/BepInEx/releases).
+* **Option B:** If you have [Riqmenu](https://riqs.kabir.au/) installed, BepInEx is already set up for you.
+
+### Installation
+
+1. Download the latest `PublicEditorEnabler.dll` from the [Releases](https://github.com/DestoryG/BitsAndbops-PublicEditorEnabler/releases) page.
+2. Place the DLL into the `BepInEx/plugins` folder.
+3. Launch the game.
+
+### Activation
+
+1. Navigate to the **Credits** menu from the main screen.
+2. Press **`Ctrl + E`** while the credits are open.
+3. The game will now load the `MixtapeEditor` scene.
+
+## 🔍 How it Works
+
+The plugin uses **HarmonyX** to patch the `CreditsScript.Update()` method. It bypasses the `SteamManager.Beta` check, allowing the `SceneKey.MixtapeEditor` to be loaded in the public release.
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
